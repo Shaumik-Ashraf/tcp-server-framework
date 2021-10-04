@@ -42,7 +42,7 @@ int main(int argc, char* argv[], char* env[]) {
 
   memset(&hints, 0, sizeof(struct addrinfo));
   hints.ai_family = AF_UNSPEC;     //ipv4 || ipv6
-  hints.ai_scoktype = SOCK_STREAM; //tcp
+  hints.ai_socktype = SOCK_STREAM; //tcp
   hints.ai_flags = AI_PASSIVE;     //wildcard IP address
   hints.ai_protocol = 0;           //any protocol
   hints.ai_canonname = NULL;
@@ -77,7 +77,7 @@ int main(int argc, char* argv[], char* env[]) {
     fprintf(stderr, "ERROR Failed to bind to socket\n");
     exit(EXIT_FAILURE);
   }
-  freeaddrinfo(result);
+  freeaddrinfo(results);
 
   //run init from server.c
   init(argc, argv, env, sfd);

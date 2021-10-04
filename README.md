@@ -5,8 +5,8 @@ A barebones TCP Server Framework in POSIX C; removes boilerplate code and uses l
 ## How To Use
  - copy files into project
  - edit init(), loop(), and quit() in server.c
- - `make -f server.mk`
- - `./server.exe`
+ - `make`
+ - `./server`
 
 ## File Spec
  - server.c : EDIT THIS FILE ONLY
