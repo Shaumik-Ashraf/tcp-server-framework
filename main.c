@@ -17,14 +17,14 @@
 
 
 static void sighandler(int sig) {
-	fprintf(stdder, "Received SIGINT\n");
+	fprintf(stderr, "Received SIGINT\n");
 	exit(1);
 }
 
 
 int main(int argc, char* argv[], char* env[]) {
 
-  at_exit(quit);
+  atexit(quit);
   signal(SIGINT, sighandler);
 
 
@@ -58,7 +58,7 @@ int main(int argc, char* argv[], char* env[]) {
 
   //iterate through socket types (ie: tcp ipv4, tcp ipv6) until successful bind
   for(rp = results; rp != NULL; rp = rp->ai_next) {
-    sfd = socket(rp->ai_family, rp->ai_socktype, ap->ai_protocol);
+    sfd = socket(rp->ai_family, rp->ai_socktype, rp->ai_protocol);
     if( sfd == - 1) {
       int errsv = errno;
       fprintf(stderr, "WARNING socket(): %s\n", strerror(errsv));
