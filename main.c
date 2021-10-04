@@ -6,6 +6,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<errno.h>
 #include<signal.h>
 #include<unistd.h>
 #include<sys/socket.h>
@@ -56,7 +57,7 @@ int main(int argc, char* argv[], char* env[]) {
   }
 
   //iterate through socket types (ie: tcp ipv4, tcp ipv6) until successful bind
-  for(rp = result; rp != NULL; rp = rp->ai_next) {
+  for(rp = results; rp != NULL; rp = rp->ai_next) {
     sfd = socket(rp->ai_family, rp->ai_socktype, ap->ai_protocol);
     if( sfd == - 1) {
       int errsv = errno;

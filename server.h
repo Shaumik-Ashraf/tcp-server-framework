@@ -14,7 +14,7 @@ typedef struct {
 } config_t;
 
 config_t config = {
-	.port = 8000;
+	.port = 8000
 }
 
 void init(int argc, char* argv[], char* env[], int sfd);
