@@ -6,9 +6,10 @@ extern config_t config;
 
 
 #include<stdio.h>
+#include<unistd.h>
 /* additional libraries here */
 
-#define MAX 255;
+#define MAX 255
 
 
 /* code here will run after server is binded to socket, but before reading any packets */
@@ -50,5 +51,3 @@ void quit(void) {
   //at_exit code here
 
 }
-
-#endif
