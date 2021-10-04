@@ -15,7 +15,10 @@
 #include"utils.h"
 
 
-static void sighandler()
+static void sighandler(int sig) {
+	fprintf(stdder, "Received SIGINT\n");
+	exit(1);
+}
 
 
 int main(int argc, char* argv[], char* env[]) {

@@ -9,11 +9,13 @@
 typedef struct {
 
   int port;
-  struct sigaction if_sigint;
+  //struct sigaction if_sigint;
 
 } config_t;
 
-config_t config;
+config_t config = {
+	.port = 8000;
+}
 
 void init(int argc, char* argv[], char* env[], int sfd);
 void loop(int argc, char* argv[], char* env[], int sfd);
