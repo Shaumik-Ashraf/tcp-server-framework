@@ -17,6 +17,6 @@ A barebones TCP Server Framework in POSIX C; removes boilerplate code and uses l
  - server.mk : makefile 
 
 ## Todo
- - makefile
- - signal handling
+ - better signal handling?
+ - config file?
  - systemd integration?
